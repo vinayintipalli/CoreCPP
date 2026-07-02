@@ -1,3 +1,5 @@
+#Best way to understand the Compilation model by trying below commands
+
 # Stage 1: preprocessor only — just text substitution
 g++ -E main.cpp -o main.i
 wc -l main.i          # -> 1063 lines, from a 5-line source (headers pasted in)
