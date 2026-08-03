@@ -16,3 +16,9 @@ template<typename T>
 constexpr T&& custom_forward(std::remove_reference_t<T>& t) noexcept {
     return static_cast<T&&>(t);
 }
+
+class Widget;
+template<typename Args>
+std::unique_ptr<Widget> make(Args&&... args) {
+    return std::unique_ptr<Widget>(new Widget(std::forward<Args>(args)...));
+}
